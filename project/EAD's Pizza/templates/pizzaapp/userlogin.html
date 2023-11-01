@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">EAD's PIZZA</a>
+    <a class='btn btn-dark' style="color:white; "href='/'>Signup</a>
+  </div>
+</nav>
+
+<div id='background-container' class="loginpage">
+<div class = "container" style="width:400px;height:250px;background-color:orange; padding:15px; margin-top:150px" >
+<h2 style='color:white;text-align:center;margin-bottom:12px '> Login </h2>
+    <form action='/customer/authenticate/' method="POST">
+    {% csrf_token %}
+        <input style="margin:auto;margin-bottom:12px;width:50%; " class="form-control" type='text' placeholder='Username' name="username">
+        <input style="margin:auto;margin-bottom:12px;width:50%; " class="form-control" type='password' placeholder='Password' name="password">
+        <input class="btn btn-success" style="width:30%; margin:auto; display:block; "  type='submit' value="login">
+    </form>
+{% for message in messages  %}
+
+<p style='text-algin:center; color:red;'> {{message}} </p>
+
+
+{% endfor %}
+
+ </div>
+
+</div>
+{% endblock body %}
+
+
+

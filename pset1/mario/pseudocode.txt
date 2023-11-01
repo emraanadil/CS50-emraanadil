@@ -1,0 +1,4 @@
+1.Prompt the user for input
+    a)use the cs50's get_int function
+    b)check the valid input using do while loop
+2.

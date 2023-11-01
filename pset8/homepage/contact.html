@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href = "styles.css" rel = "stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <title> </title>
+  </head>
+  <body style="height:100vh">
+    <div class = "navigation sticky-top">
+  <ul>
+    <li class=""><a href = "index.html" >Emraan Adil</a></li>
+    <li><a href = "photos.html" >Photos</a></li>
+    <li><a href = "about.html" > About </a></li>
+    <li class="active float-right "><a href = "contact.html" > Contact </a></li>
+  </ul>
+    </div>
+    <div class = "container">
+
+    <form action="/contact.html" >
+    <fieldset>
+      <legend>Contact Me</legend>
+      <label for="name" >Name:</label><br>
+      <input type="text" required="required" id="name" name="name"><br>
+      <label for="email" >Email:</label><br>
+      <input type="email" required="required" id="email" name="email" ><br>
+      <label for="phone" >Phone:</label><br>
+      <input type="phone" id="phone" name="phone" ><br>
+      <label for="textbox" required="required" >Enter Message:</label><br>
+       <textarea name="message" rows="5" cols="40"> </textarea> <br>
+      <input type="submit" onclick= "alertfunction()" value="Send Message">
+      <script>
+        function alertfunction(){
+          alert("Form Submitted Successfully")
+        }
+
+      </script>
+    </fieldset>
+ </form>
+<footer>Copyright &copy; <a href="https://www.emraanadil.wordpress.com">emraanadil</a></footer>
+</div>
+
+</body>
+</html>

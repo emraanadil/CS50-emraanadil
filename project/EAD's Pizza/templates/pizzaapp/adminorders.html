@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Orders{% endblock title %}
+{% block body %} 
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Welcome Admin</a>
+    <a class= 'nav-item btn btn-dark' href="/admin/homepage/" style="color:white; text-decoration:none" > Home </a>
+    <a class='btn btn-danger' href='/adminlogout/'>Logout</a>
+  </div>
+</nav>
+<h1 style="text-align:center">My Orders </h1>
+{%for order in orders%}
+<div style = "margin:40px" class="alert alert-warning" role = "alert">
+<p style= "text-align:center;"> Username : {{order.username}} </p>
+<p style= "text-align:center;" > Contact Number: {{order.phone}} </p>
+<p style= "text-align:center;"> Order Address: {{order.address}} </p>
+<p style= "text-align:center;"> Ordered Items: {{order.ordereditems}} </p>
+<p style= "text-align:center;"> Order Status: {{order.status}} </p>
+<div class= 'container' style="display:block; margin:auto ; width:15%">
+
+<a style= "text-align:center;" href="/acceptorder/{{order.id}}" class= "btn btn-success"> Accept </a>
+<a style= "text-align:center;" href="/declineorder/{{order.id}}" class= "btn btn-danger"> Decline </a>
+</div>
+
+
+ </div>
+{% endfor %}
+
+
+
+{% endblock body %} 
+
+
+
+
+

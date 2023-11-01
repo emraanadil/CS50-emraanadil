@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Admin{% endblock title %}
+{% block body %}
+
+<div class="row mb-3"  style=" padding:15px; width:300px;background-color:#f36e00 ;
+ display:block;margin:auto;margin-top:160px" >
+    <h1 style="color: white;text-align:center" >admin login</h1>
+    <form sclass = ''action="/authenticateadmin/" method="POST">
+    {% csrf_token %}
+<input type="text" style="padding: 5px; margin-bottom:15px " class="form-control" name="username" placeholder="Username">
+<input type="password" class="form-control" name='password' placeholder="Password">
+<input type="submit" class="form-control btn btn-success" style="margin-top:15px;" value="Login">
+</form>
+</div> 
+{% for message in messages%}
+<p style="color: red ; text-align:center;"  >{{message}}</p>
+{%endfor%}
+
+{% endblock body %}

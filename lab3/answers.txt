@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: checked the lower bound bw sort 1 and sort3.
+
+sort2 uses: Merge Sort
+
+How do you know?: checked the random list on all three sorts to find out which is fastest.
+
+sort3 uses: Selection Sort
+
+How do you know?: same as in step 1.checked the lower bound i.e,sorted .and it took longer time than sort1 .so it is selection sort

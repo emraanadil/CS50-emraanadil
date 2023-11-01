@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Welcome {{username}}{% endblock title %}
+{% block body %}
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand"> EAD's PIZZA <br>Welcome {{username}}</a>
+    <a class= 'nav-item btn btn-dark' href="/userorders/" style="color:white; text-decoration:none" > My Orders </a>
+    <a class='btn btn-danger' href='/userlogout/'>Logout</a>
+   
+  </div>
+</nav>
+<div  class='loginpage orderpage' id="background-container">
+{% for message in messages  %}
+<p style="text-align:center;color:green"> {{message}} </p>
+
+{% endfor %}
+<div class='container' style="padding:15px; ">
+<form method="POST" action="/placeorder/">
+{% csrf_token %}
+<table class="table" style="width:40%; margin:auto;"  > 
+<thead>
+    <tr>
+        <th>Pizza</th>
+        <th>Price</th>
+        <th>Quantity</th>
+
+    </tr>
+</thead>
+<tbody>
+{% for pizza in pizzas %}
+<tr>
+    <td> {{pizza.name}} </td>
+    <td> {{pizza.price}} </td>
+    <td> <input class="form-control" style="width:66px;background-color: firebrick;;" type= 'number' value="0" min="0" name="{{pizza.id}}" name='quantity'> </td>
+
+   </tr>
+{%endfor%}
+
+</tbody>
+
+</table>
+<div style="text-align:center; margin-top:15px">
+<input class="" style="margin-left:0px;padding:5px;border-radius: 6px;background-color: firebrick;;" type="text" placeholder='Address' name='address'>
+<input type="submit" style="color:black; " class= 'btn btn-primary btn-outline-danger' value= "Place Order">  
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+{% endblock body %}

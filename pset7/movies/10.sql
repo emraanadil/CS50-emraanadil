@@ -1,0 +1,2 @@
+--In 10.sql, write a SQL query to list the names of all people who have directed a movie that received a rating of at least 9.0.
+select name from people join directors on directors.person_id = people.id join movies on movies.id = directors.movie_id join ratings on ratings.movie_id = movies.id where rating >= 9;
